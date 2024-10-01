@@ -30,7 +30,8 @@ const CartItem = ({ onContinueShopping }) => {
   const handleRemove = (item) => () => dispatch(removeItem(item.name));
 
   // Calculate total cost based on quantity for an item
-  const calculateTotalCost = (item) => item.cost * item.quantity;
+  const calculateTotalCost = (item) =>
+    formatDollarToNumber(item.cost) * item.quantity;
 
   return (
     <div className="cart-container">
